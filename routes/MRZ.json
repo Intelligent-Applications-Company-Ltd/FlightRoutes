@@ -1,0 +1,1 @@
+[{"iata_from":"MRZ","routes":[{"first_flight":null,"common_duration":"95","iata_from":"MRZ","iata_to":"SYD","id":30919,"city_name_en":"Sydney","is_new":"0","filtered_out":0,"airlineroutes":[{"carrier":"QF","carrier_name":"Qantas","first_flight":null,"last_flight":"2021-03-27","common_duration":"95","route_id":"30919","is_new":"0"}]}]}]

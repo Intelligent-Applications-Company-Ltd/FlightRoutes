@@ -1,0 +1,1 @@
+[{"iata_from":"MOV","routes":[{"first_flight":null,"common_duration":"100","iata_from":"MOV","iata_to":"BNE","id":30651,"city_name_en":"Brisbane","is_new":"0","filtered_out":0,"airlineroutes":[{"carrier":"QF","carrier_name":"Qantas","first_flight":null,"last_flight":"2021-03-27","common_duration":"100","route_id":"30651","is_new":"0"}]}]}]

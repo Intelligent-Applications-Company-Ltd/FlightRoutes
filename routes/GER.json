@@ -1,0 +1,1 @@
+[{"iata_from":"GER","routes":[{"first_flight":null,"common_duration":"35","iata_from":"GER","iata_to":"HAV","id":17000,"city_name_en":"Havana","is_new":"0","filtered_out":0,"airlineroutes":[{"carrier":"CU","carrier_name":"Cubana de Aviacion","first_flight":null,"last_flight":"2023-08-01","common_duration":"35","route_id":"17000","is_new":"0"}]}]}]

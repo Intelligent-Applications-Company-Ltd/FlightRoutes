@@ -1,0 +1,1 @@
+[{"iata_from":"CTC","routes":[{"first_flight":null,"common_duration":"100","iata_from":"CTC","iata_to":"AEP","id":10568,"city_name_en":"Buenos Aires","is_new":"0","filtered_out":0,"airlineroutes":[{"carrier":"AR","carrier_name":"Aerolineas Argentinas","first_flight":null,"last_flight":"2021-09-18","common_duration":"100","route_id":"10568","is_new":"0"}]}]}]

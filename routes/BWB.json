@@ -1,0 +1,1 @@
+[{"iata_from":"BWB","routes":[{"first_flight":"2020-03-04","common_duration":"120","iata_from":"BWB","iata_to":"PER","id":66589,"city_name_en":"Perth","is_new":"1","filtered_out":0,"airlineroutes":[{"carrier":"QQ","carrier_name":"Alliance Airlines","first_flight":null,"last_flight":"2020-05-13","common_duration":"120","route_id":"66589","is_new":"1"}]}]}]

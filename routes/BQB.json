@@ -1,0 +1,1 @@
+[{"iata_from":"BQB","routes":[{"first_flight":"2020-03-25","common_duration":"210","iata_from":"BQB","iata_to":"MEL","id":66545,"city_name_en":"Melbourne","is_new":"1","filtered_out":0,"airlineroutes":[{"carrier":"JQ","carrier_name":"Jetstar","first_flight":null,"last_flight":"2022-04-10","common_duration":"210","route_id":"66545","is_new":"1"}]}]}]
