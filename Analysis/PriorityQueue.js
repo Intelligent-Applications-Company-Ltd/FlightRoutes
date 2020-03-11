@@ -67,3 +67,5 @@ PriorityQueue.prototype.Element = class {
         this.priority = priority;
     }
 };
+
+module.exports = PriorityQueue;

@@ -1,2 +1,3 @@
 call npm install
-call node ./index.js
+REM call node ./index.js
+call node ./run.js

@@ -26,8 +26,8 @@ for (let i = 0; i < _airports.length; i++) {
         _routes = JSON.parse(routesRawData);
 
         for (let j = 0; j < _routes[0].routes.length; j++) {
-            if (_routes[0].routes[i] != undefined || _routes[0].routes[i] != null) {
-                g.addEdge(el, _routes[0].routes[i].iata_to, parseInt(_routes[0].routes[i].common_duration));
+            if (fs.existsSync(`./routes/${ _routes[0].routes[j].iata_to}.json`)) {
+                g.addEdge(el, _routes[0].routes[j].iata_to, parseInt(_routes[0].routes[j].common_duration));
             }
         }
     }
@@ -44,13 +44,25 @@ for (let i = 0; i < _airports.length; i++) {
 // g.addEdge("A", "D", 4);
 // g.addEdge("D", "C", 3);
 
-console.log("finish adding data");
-allParts = g.floydWarshallAlgorithm();
+let _paths = {};
+
 try {
-    let fileData = JSON.stringify(allParts);
-    fs.writeFileSync(`./allParts.json`, fileData);
+    console.log("finish adding data");
+    _paths = g.floydWarshallAlgorithm();
+    // allParts = g.djikstraAlgorithm('WEH');
+    try {
+        let fileData = JSON.stringify(_paths);
+        fs.writeFileSync(`./allPairsShortestPath.json`, fileData);
+    } catch (e) {
+        console.log(`error witing all parts`);
+    }
 } catch (e) {
-    console.log(`error witing all parts`);
+    console.log(e);
 }
 
-console.log(allParts);
+try {
+    //g.floydPath(allParts.path, 'B', 'C');
+   console.log(g.floydPath(_paths.path, 'WEH', 'TTT'));
+} catch (e) {
+    console.log(e);
+}

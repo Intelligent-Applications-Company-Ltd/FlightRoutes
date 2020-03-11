@@ -30,8 +30,12 @@ const fs = require('fs');
   amtAirports = _airports.length;
   for (let i = 0; i < amtAirports; i = i + bufferSize) {
     asyncForEach(_airports.splice(i, i + bufferSize), async el => {
-      let d = await GetURLData(browser, `https://www.flightsfrom.com/${el.IATA}/destinations`, 2);
-      writeRouteToFile(d, fs);
+      try {
+        let d = await GetURLData(browser, `https://www.flightsfrom.com/${el.IATA}/destinations`, 2);
+        writeRouteToFile(d, fs);
+      } catch (e) {
+        console.log(e);
+      }
       done++;
       console.log(`${done} of ${amtAirports}`);
     });

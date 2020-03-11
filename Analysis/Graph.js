@@ -250,8 +250,10 @@ class Graph {
 
     floydWarshallAlgorithm() {
         let dist = {};
+        let path = {};
         for (let i = 0; i < this.nodes.length; i++) {
             dist[this.nodes[i]] = {};
+            path[this.nodes[i]] = {};
 
             // For existing edges assign the dist to be same as weight
             this.edges[this.nodes[i]].forEach(e => (dist[this.nodes[i]][e.node] = e.weight));
@@ -261,7 +263,12 @@ class Graph {
                 if (dist[this.nodes[i]][n] == undefined)
                     dist[this.nodes[i]][n] = Infinity;
                 // For self edge assign dist to be 0
-                if (this.nodes[i] === n) dist[this.nodes[i]][n] = 0;
+                if (this.nodes[i] === n) {
+                    dist[this.nodes[i]][n] = 0;
+                }
+
+                //path[this.nodes[i]][n] = null;
+
             });
         }
 
@@ -274,12 +281,30 @@ class Graph {
                     // Check if going from i to k then from k to j is better
                     // than directly going from i to j. If yes then update
                     // i to j value to the new value
-                    if (dist[i][k] + dist[k][j] < dist[i][j])
+                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
                         dist[i][j] = dist[i][k] + dist[k][j];
+                        path[i][j] = k;
+                    }
+
                 });
             });
         });
-        return dist;
+        return {
+            dist,
+            path
+        };
+    }
+
+
+    floydPath(next, u, v) {
+        if (next[u][v] == null) return [];
+        let path = [u];
+        while (u != v && next[u][v] != null) {
+            u = next[u][v];
+            path.push(u);
+        }
+        path.push(v);
+        return path;
     }
 }
 
